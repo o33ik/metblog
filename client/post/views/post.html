@@ -1,0 +1,43 @@
+<template name='posts'>
+
+<div class="articles">
+	<div class="main-buttons">
+		<a class="btn login-btn">
+			{{>loginButtons}}
+		</a>
+		{{#if currentUser}}
+			<a class="btn add-article">
+				Add article
+			</a>
+		{{/if}}	
+	</div>
+
+	{{>addForm}}
+
+	{{#each posts}}
+		{{>post}}
+	{{/each}}
+</div>
+</template>
+
+<template name='post'>
+	<div class="article-wrap">
+		<div class="article-top">
+			<h2><a class='blog-link' href="{{ pathFor 'postDetail'}}">{{title}}</a></h2>
+			
+			<div class="post-data">
+				<span class='pub-date'>{{ formatDate pub_date }}</span>
+				<a class="owner blog-link">by {{ username}}</a>	
+				{{#if isOwner}}
+					<div class="setting-buttons">
+						<a href="{{ pathFor 'postUpdate'}}"><i class="icon-pencil"></i></a>
+						<i class="icon-trash delete"></i>
+					</div>
+				{{/if}}
+			</div>			
+		</div>
+		<div class="article-body">
+			<p class="article-desc">{{description}}</p>
+		</div>		
+	</div>
+</template>

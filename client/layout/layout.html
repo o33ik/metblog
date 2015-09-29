@@ -1,0 +1,23 @@
+<head>
+    <!-- iconfonts -->
+	<link href="https://fontastic.s3.amazonaws.com/wBbm5tW4MKr2w5nWJEDzm9/icons.css" rel="stylesheet">
+    <!-- Ckeditor -->
+	<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="/ckeditor/adapters/jquery.js"></script>
+    <!-- Highlight-->
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/tomorrow.min.css">
+	<script src="//cdn.jsdelivr.net/highlight.js/8.8.0/highlight.min.js"></script>
+</head>
+
+<template name='layout'>
+<div class="conteiner-fluid" id="wrap">
+	
+	{{>header}}
+
+	<div class="container main-body">
+		{{> yield}}
+	</div>
+
+    {{>footer}}
+</div>
+</template>

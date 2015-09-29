@@ -1,0 +1,27 @@
+<template name='addForm'>
+	<form class="article-form hidden-form">
+
+        <div class="error" id="title-error"></div>
+		<label for="title" class="text-label">Title</label>
+		<input type="text" name='title' id='title' placeholder='title' />
+
+		<label for="isPrivate" class="text-label checkbox-label">
+			Is Private
+			<input type="checkbox" name='isPrivate'  unchecked/>	
+		</label>
+
+        <div class="error" id="description-error"></div>
+		<label for="description" class="text-label">Description</label>	
+		<textarea name="description" id='description' cols="30" rows="4" ></textarea>
+
+		<div class="error" id="body-error"></div>
+        <label for="body" class="text-label">Body</label>
+		<textarea id='body' name="body" cols="30" rows="10" ></textarea>
+
+        <div class="form-buttons">
+			<span class='btn btn-succes cancel'>Cancel</span>
+			<input type="submit" value="Publish" class="btn btn-succes">
+		</div>
+		
+	</form>
+</template>
