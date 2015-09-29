@@ -1,4 +1,4 @@
-
+// for publishes use server/publications.js file, for methods - server/methods.js file
 Meteor.publish('posts', function(query){
 	return Posts.find({
 		$or: [
