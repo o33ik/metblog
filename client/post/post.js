@@ -1,5 +1,5 @@
 
-Meteor.subscribe('posts');
+Meteor.subscribe('posts'); // paste subscriptions in onCreated/onRendered or in router waitOn
 
 Template.posts.helpers({
 	posts: function () {
@@ -8,10 +8,10 @@ Template.posts.helpers({
 });
 
 Template.postUpdate.events({
-	'submit .article-form': function (event) {
+	'submit .article-form': function (event) { // be better to use id instead of class
         event.preventDefault();
         var data = event.target;
-        var id = this._id;      
+        var id = this._id;    // you can write 'var self = this' for save current context
         var isPrivate = data.isPrivate.checked;   
         var post = {
         	title : data.title.value,
@@ -73,6 +73,7 @@ Template.post.events({
 	}
 });
 
+// for different templates use different .html and .js files
 Template.posts.events({
 	'click .add-article': function (event){
 		var articleForm = $('.article-form');
