@@ -1,3 +1,4 @@
+// document ready don't required. Also, in tmpl.onRendered DOM loaded already.
 $(document).ready(function(){
 
     validateForm = function (form){
