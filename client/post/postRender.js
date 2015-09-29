@@ -9,10 +9,11 @@ Template.registerHelper('formatDate', function(date) {
 Template.registerHelper('isOwner', function(){
    return this.owner === Meteor.userId();
 });
-
+// use Template.tmpl.onRendered(function(){})
 Template.addForm.rendered = function() {
    $('#body').ckeditor();
 };
+// for different templates use different .html and .js files
 Template.postUpdate.rendered = function() {
    $('#body').ckeditor();
 };
